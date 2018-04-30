@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iZooto | Web Push Notifications for Desktop and Mobile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- APP-CSS-->
+    <link rel="stylesheet" href="assets/stylesheets/app.css" />
+    
+    <!-- FONT-AWESOME-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <!-- GOOGLE-FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Open+Sans:300,400,600,700" rel="stylesheet">
+    
+    <!-- FAVICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/manifest.json" crossorigin="anonymous">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- JS-UI-KIT-->
+    <script src="assets/javaScript/libraries/uikit.min.js"></script>
+    <script src="assets/javaScript/libraries/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="loader"></div>
+    
+    <!-- ENGAGE-RETARGET-RETAIN-NAV-->
+    <div class="engage-fixed-nav-wrapper">
+        <ul class="uk-flex-center engage-fixed-nav" id="menu">
+            <li data-menuanchor="secondSection"><a href="#secondSection">Engage</a></li>
+            <li data-menuanchor="thirdSection"><a href="#thirdSection">Retarget</a></li>
+            <li data-menuanchor="fourthSection"><a href="#fourthSection">Retain</a></li>
+        </ul>
+    </div>
+    <!-- END-OF-ENGAGE-RETARGET-RETAIN-NAV-->
+    
+    <!-- FULL-PAGE-WRAPPER-->
+    <div id="fullpage">
+        <!-- TOP-MAIN-SECTION-->
+        <section class="section top-main-section">
+            <!-- HEADER-->
+            <header id="header">
+                <div class="uk-hidden@m">
+                    <div class="uk-offcanvas-content">
+                        <!-- MOBILE-MENU-->
+                        <nav class="uk-navbar-container" uk-navbar>
+                            <div class="uk-navbar-left uk-margin-left">
+                                <a href="index.html"><img src="assets/images/app-logo.png" alt="iZooto Logo" width="110"></a>
+                            </div>
+                            <div class="uk-navbar-right">
+                                <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="" uk-toggle="target: #offcanvas-nav"></a>
+                            </div>
+                            <div id="offcanvas-nav" uk-offcanvas="flip: true">
+                                <div class="uk-offcanvas-bar">
+                                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                                    <ul class="uk-nav uk-nav-default" id="nav">
+                                        <li class="uk-nav-header"><a href="#" class="menu-link">See It In Action</a></li>
+                                        <li class="uk-nav-header"><a href="#" class="menu-link">Features</a></li>
+                                        <li class="uk-nav-header"><a href="#" class="menu-link">Pricing</a></li>
+                                        <li class="uk-nav-header">
+                                            <a href="#">Sign Up For Free</a>
+                                        </li>
+                                        <li class="uk-nav-header">
+                                            <a href="#"> Book Demo</a>
+                                        </li>
+                                        <li class="uk-nav-header"><a href="#" class="menu-link">Log In</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- END-OF-MOBILE-MENU-->
+                    </div>
+                </div>
+                <div class="uk-visible@m">
+                    <!-- LARGER-DEVICES-MENU-->
+                    <nav class="uk-navbar-container larger-devices-menu">
+                        <div class="uk-container">
+                            <div uk-navbar="dropbar: true; dropbar-anchor: !.uk-navbar-container; dropbarMode: push">
+                                <div class="uk-navbar-left">
+                                    <a class="uk-navbar-item uk-logo" href="#">
+                                        <img src="assets/images/app-logo.png" alt="iZooto Logo">
+                                    </a>
+                                </div>
+                                <div class="uk-navbar-right">
+                                    <ul class="uk-navbar-nav">
+                                        <li><a href="#" class="menu-link">See It In Action</a></li>
+                                        <li><a href="#" class="menu-link">Features</a></li>
+                                        <li><a href="#" class="menu-link">Pricing</a></li>
+                                        <li>
+                                            <a href="#" class="uk-button uk-button-primary uk-border-rounded button-in-nav">Sign Up For Free</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="uk-button uk-button-secondary uk-border-rounded button-in-nav"> Book Demo</a>
+                                        </li>
+                                        <li><a href="#" class="menu-link">Log In</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- END-OF-LARGER-DEVICES-MENU-->
+                </div>
+            </header>
+            <!-- END-OF-HEADER-->
+            
+            <div class="uk-container uk-margin-auto">
+                <!-- TOP-SECTION-INNER-->
+                <div class="top-main-section-inner">
+                    <div class="uk-flex-middle inner-section-padding" uk-grid>
+                        <div class="uk-width-3-5@m" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+                            <h1>Sell More on your Ecommerce Store</h1>
+                            
+                            <p class="uk-h4 uk-text-bold uk-margin-top-medium">Retarget website visitors with personilized browser notifications. Drive more conversations.</p>
+                            
+                            <!-- GET-STARTED-FOR-FREE-->
+                            <div class="get-started-for-free">
+                                <form class="" method="post" action="">
+                                    <div class="uk-margin-small">
+                                        <input type="text" class="uk-input text-box" id="" name="" placeholder="Enter your work email" required>
+                                        <button class="uk-button uk-button-primary uk-button-medium get-started-button">Get Started For Free</button>    
+                                        
+                                        <p class="uk-text-small uk-margin-small"><sup>*</sup> Set up in Minutes! No Credit Card Required</p>                                    
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- END-OF-GET-STARTED-FOR-FREE-->
+                            
+                            
+                        </div>
+                        <div class="uk-width-2-5@m" uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
+                            <img src="assets/images/notification1-1.png" alt="Notification Snapshot iZooto" width="378" class="uk-display-block">
+                        </div>
+                        
+                        <div class="uk-width-1-1@m">
+                            <!-- TRUSTED-BY-MILLIONS-->
+                            <div class="trusted-by-millions">
+                                <p class="uk-h3 uk-text-bold uk-text-center">Trusted by 15,000+ Businesses Globally</p>
+                                
+                                <!--<div class="uk-child-width-auto" uk-grid>
+                                    <div>
+                                        <img src="assets/images/" alt="" width="">
+                                        
+                                    </div>
+                                </div>-->
+                            </div>
+                            <!-- END-OF-TRUSTED-BY-MILLIONS-->
+                        </div>
+                    </div>
+                </div>
+                <!-- END-OF-TOP-SECTION-INNER-->
+            </div>
+        </section>
+        <!-- END-OF-TOP-MAIN-SECTION-->
+        <!-- ENAGAGE-RETARGET-SECOND-SECTION-->
+        <section class="section engage-retarget-section" id="engage">
+            
+            <div class="uk-container">
+                <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                    <div class="uk-padding" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+                        <h3 class="">Put Retargeting on Autopilot. <br> Convert More.</h3>
+                        
+                        <p>Remove the heavy burdern of module.</p>
+                    </div>
+                    <div uk-scrollspy="cls: uk-animation-slide-right; repeat: true; delay: 500">
+                        <img src="assets/images/screen1.gif" alt="Engage Gif iZooto" width="500" uk-gif>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section engage-retarget-section">
+            <div class="uk-container">
+                <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                    <div uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+                        <img src="assets/images/screen2.gif" alt="Retarget Gif iZooto" width="490" uk-gif>
+                    </div>
+                    <div class="uk-padding" uk-scrollspy="cls: uk-animation-slide-right; repeat: true; delay: 500">
+                        <h3 class="">Send the Right Message at the<br> Right Time.</h3>
+                        
+                        <p>Engage users as per their current stage in the journey. Never let your users go dormant. Enagage them with perfectly timed notifications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section engage-retarget-section">
+            <div class="uk-container">
+                <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                    <div class="uk-padding" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+                        <h3 class="">Convert Customers into<br> Advocates.</h3>
+                        
+                        <p>Drive repeat transactions by building loyal customer base. Run loyalty campaigns, discounts and more. Never lose your customers to competitors.</p>
+                    </div>
+                    <div uk-scrollspy="cls: uk-animation-slide-right; repeat: true; delay: 500">
+                        <img src="assets/images/screen3.gif" alt="Retain Gif iZooto" width="500" uk-gif>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END-OF-ENAGAGE-RETARGET-SECOND-SECTION-->
+        
+        <!-- WHY-IZOOTO-->        
+        <section class="section why-izooto" id="why-izooto">
+            <h3 class="uk-text-center">Why iZooto</h3>
+            <div class="uk-container">
+                <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-medium uk-padding uk-padding-remove-top uk-padding-remove-bottom" uk-grid uk-scrollspy="cls: uk-animation-fade; target: > div > .iZooto-features; delay: 500; repeat: true">
+                    <div>
+                        <!-- IZOOTO-FEATURES-->
+                        <div class="iZooto-features uk-text-center uk-box-shadow-medium">
+                            <div class="uk-inline features-wrapper">
+                                <img src="assets/images/real-time.png" alt="Real Time Notification iZooto" width="180">
+                            
+                                <p>Real-Time Notification</p>
+                                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                    <h4>Real-Time Notification</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END-OF-IZOOTO-FEATURES-->
+                    </div>
+                    <div>
+                        <!-- IZOOTO-FEATURES-->
+                        <div class="iZooto-features uk-text-center uk-box-shadow-medium">
+                            <div class="uk-inline features-wrapper">
+                                <img src="assets/images/personalisation.png" alt="Personalisation iZooto" width="180">
+                            
+                                <p>Personalisation</p>
+                                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                    <p>Personalisation</p>
+                                </div>
+                            </div>
+                                                        
+                        </div>
+                        <!-- END-OF-IZOOTO-FEATURES-->
+                    </div>
+                    <div>
+                        <!-- IZOOTO-FEATURES-->
+                        <div class="iZooto-features uk-text-center uk-box-shadow-medium">
+                            
+                            <div class="uk-inline features-wrapper">
+                                <img src="assets/images/drip-campaigns.png" alt="Drip Campaigns iZooto" width="180">
+                            
+                                <p>Drip Campaigns</p>
+                                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                    <p>Drip Campaigns</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- END-OF-IZOOTO-FEATURES-->
+                    </div>
+                    
+                    <div>
+                        <!-- IZOOTO-FEATURES-->
+                        <div class="iZooto-features uk-text-center uk-box-shadow-medium">
+                                                        
+                            <div class="uk-inline features-wrapper">
+                                <img src="assets/images/performance-optimization.png" alt="Performance Optimization iZooto" width="180">
+                            
+                                <p>Performance Optimization</p>
+                                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                    <p>Performance Optimization</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- END-OF-IZOOTO-FEATURES-->
+                    </div>
+                    <div>
+                        <!-- IZOOTO-FEATURES-->
+                        <div class="iZooto-features uk-text-center uk-box-shadow-medium">
+                            
+                            <div class="uk-inline features-wrapper">
+                                <img src="assets/images/segmented-retargeting.png" alt="Segmented Retargeting iZooto" width="180">
+                            
+                                <p>Segmented Retargeting</p>
+                                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                    <p>Segmented Retargeting</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- END-OF-IZOOTO-FEATURES-->
+                    </div>
+                    <div>
+                        <!-- IZOOTO-FEATURES-->
+                        <div class="iZooto-features uk-text-center uk-box-shadow-medium">
+                            
+                            <div class="uk-inline features-wrapper">
+                                <img src="assets/images/customizable-prompts.png" alt="Customizable Prompts iZooto" width="180">
+                            
+                                <p>Customizable Prompts</p>
+                                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                    <p>Customizable Prompts</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- END-OF-IZOOTO-FEATURES-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END-OF-WHY-IZOOTO-->
+        <!-- SET-UP-IN-MINUTES-->
+        <section class="section set-up-in-mins">
+            <h3 class="uk-text-center">Setup in minutes with ready integrations!</h3>
+            <div class="uk-container uk-text-center">
+                <ul class="integrations-list">
+                    <li>
+                        <img src="assets/images/shopify.png" alt="Shopify Logo" width="180">
+                    </li>
+                    <li>
+                        <img src="assets/images/shopify-plus.png" alt="Shopify Plus Logo" width="180">
+                    </li>
+                    <li>
+                        <img src="assets/images/magento.png" alt="Magento Logo" width="180">
+                    </li>
+                    <li>
+                        <img src="assets/images/woocommerce.png" alt="Woocommerce Logo" width="180">
+                    </li>
+                </ul>
+                
+                <div class="uk-margin-auto uk-text-center">
+                    <button class="uk-button uk-button-primary uk-border-rounded">Explore More</button>
+                </div>
+            </div>
+        </section>
+        <!-- END-OF-SET-UP-IN-MINUTES-->
+        <!-- CUSTOMERS-TESTIMONIALS-->
+        <section class="section customer-testimonials">
+            <h3 class="uk-text-center">Our Customer Love Us</h3>
+            <div class="uk-container">
+                <div class="uk-position-relative uk-visible-toggle uk-dark" uk-slideshow="min-height: 140; max-height: 240; animation: push; autoplay: true; autoplay-interval: 4000">
+
+                    <ul class="uk-slideshow-items" style="color: #000;">
+                        <li>
+                            <div class="uk-flex-middle" uk-grid>
+                                <div class="uk-width-2-3@s uk-width-4-5@m">
+                                    <p><i class="fa fa-quote-left"></i> We have been able to solve card abandonment on web really effectively using web push notifications. We are now used to seeing Click thriugh Rates of 12% with iZooto :) <i class="fa fa-quote-right"></i></p>
+                                </div>
+                                <div class="uk-width-1-3@s uk-width-1-5@m">
+                                    <img src="assets/images/stalkbuylove.png" alt="Stalk Buy Love Logo" width="">
+                                    
+                                    <span class="uk-display-block uk-text-bold">Aashna</span>
+                                    <span class="uk-display-block uk-margin-small">Marketing, StalkyBuyLove</span>
+                                </div>
+                            </div>                                 
+                        </li>
+                        
+                        <li>
+                            <div class="uk-flex-middle" uk-grid>
+                                <div class="uk-width-2-3@s uk-width-4-5@m">
+                                    <p><i class="fa fa-quote-left"></i> We have been able to solve card abandonment on web really effectively using web push notifications. We are now used to seeing Click thriugh Rates of 12% with iZooto :) <i class="fa fa-quote-right"></i></p>
+                                </div>
+                                <div class="uk-width-1-3@s uk-width-1-5@m">
+                                    <img src="assets/images/stalkbuylove.png" alt="Stalk Buy Love Logo" width="">
+                                    
+                                    <span class="uk-display-block uk-text-bold">Aashna</span>
+                                    <span class="uk-display-block uk-margin-small">Marketing, StalkyBuyLove</span>
+                                </div>
+                            </div>                                 
+                        </li>
+                        
+                        <li>
+                            <div class="uk-flex-middle" uk-grid>
+                                <div class="uk-width-2-3@s uk-width-4-5@m">
+                                    <p><i class="fa fa-quote-left"></i> We have been able to solve card abandonment on web really effectively using web push notifications. We are now used to seeing Click thriugh Rates of 12% with iZooto :) <i class="fa fa-quote-right"></i></p>
+                                </div>
+                                <div class="uk-width-1-3@s uk-width-1-5@m">
+                                    <img src="assets/images/stalkbuylove.png" alt="Stalk Buy Love Logo" width="">
+                                    
+                                    <span class="uk-display-block uk-text-bold">Aashna</span>
+                                    <span class="uk-display-block uk-margin-small">Marketing, StalkyBuyLove</span>
+                                </div>
+                            </div>                                 
+                        </li>
+                    </ul>
+                    
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                    
+                    <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- CUSTOMERS-TESTIMONIALS-->
+        <!-- IZOOTO-FOOTER-->
+        <section class="section iZooto-footer">
+            <div class="uk-container">
+                <div class="uk-flex uk-flex-center">
+                    <div class="uk-margin-medium-right">
+                        <!-- FOOTER-TOP-BOX-->
+                        <div class="footer-top-box uk-box-shadow-medium" uk-scrollspy="cls: uk-animation-scale-up; repeat: true;">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-1-4 uk-text-center">
+                                    <img src="assets/images/pricing-icon.png" alt="Pricing Icon iZooto" width="">
+                                </div>
+                                <div class="uk-width-3-4">
+                                    <h4>See the pricing</h4>
+                                    <p class="uk-margin-small">Choose your varity of plans and select a plan that's right for you</p>
+                                    
+                                    <a href="#">Pricing starts at $0 <span class="uk-icon" uk-icon="arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END-OF-FOOTER-TOP-BOX-->
+                    </div>
+                    
+                    <div class="">
+                        <!-- FOOTER-TOP-BOX-->
+                        <div class="footer-top-box uk-box-shadow-medium" uk-scrollspy="cls: uk-animation-scale-up; repeat: true; delay: 500">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-1-4 uk-text-center">
+                                    <img src="assets/images/success-icon.png" alt="Success Icon iZooto" width="">
+                                </div>
+                                <div class="uk-width-3-4">
+                                    <h4>Success Stories</h4>
+                                    <p class="uk-margin-small">Discover companies like you who have found success with iZooto.</p>
+                                    
+                                    <a href="#">Know More <span class="uk-icon" uk-icon="arrow-right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END-OF-FOOTER-TOP-BOX-->
+                    </div>
+                </div>
+                
+                <div class="footer-nav" uk-scrollspy="cls: uk-animation-slide-top-small; repeat: true; delay: 500">
+                    <div class="uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid uk-scrollspy="cls: uk-animation-fade; target: > div; delay: 500; repeat: true">
+                        <div class="">
+                            <h5>Contact Us</h5>
+                            
+                            <div class="uk-flex-middle uk-margin-small-bottom" uk-grid>
+                                <div class="uk-width-1-3 uk-width-1-4@m">
+                                    <img src="assets/images/contact-footer/mail-icon.png" alt="Mail Icon iZooto">
+                                </div>
+                                <div class="uk-width-2-3 uk-width-3-4@m">
+                                    <a href="mailto:sales@izooto.com">sales@izooto.com</a>
+                                </div>
+                                
+                                <div class="uk-width-1-3 uk-width-1-4@m uk-margin-small">
+                                    <img src="assets/images/contact-footer/phone-icon.png" alt="Phone Icon iZooto">
+                                </div>
+                                <div class="uk-width-2-3 uk-width-3-4@m uk-margin-small">
+                                    <a href="tel:+1-302-357-3678">+1-302-357-3678</a>
+                                </div>
+                                
+                                <div class="uk-width-1-3 uk-width-1-4@m uk-margin-small">
+                                    <img src="assets/images/contact-footer/location-icon.png" alt="Location Icon iZooto">
+                                </div>
+                                <div class="uk-width-2-3 uk-width-3-4@m uk-margin-small">
+                                    <span>4011 155<sup>th</sup> Ave SE <br>Bellevue, WA 98006</span>
+                                </div>
+                            </div>
+                            
+                            
+                            <h5 class="uk-margin-small">Connect With Us</h5>
+                            
+                            <ul class="uk-margin-top social-nav">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="">
+                            <h5>Product</h5>
+                            
+                            <ul class="uk-nav uk-nav-default">
+                                <li><a href="#">What's New?</a></li>
+                                <li><a href="#">Playbooks for Shopify</a></li>
+                                <li><a href="#">Automated Notifications</a></li>
+                                <li><a href="#">Segmentation</a></li>
+                            </ul>
+                            
+                            <h5 class="uk-margin-small">Compare</h5>
+                            <ul class="uk-nav uk-nav-default">
+                                <li><a href="#">iZooto vs PushCrew</a></li>
+                                <li><a href="#">iZooto vs OneSignal</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="">
+                            <h5>Resources</h5>
+                            
+                            <ul class="uk-nav uk-nav-default">
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Case Studies</a></li>
+                                <li><a href="#">Solutions</a></li>
+                                <li><a href="#">Integrations</a></li>
+                                <li><a href="#">Browser Notofications Explained</a></li>
+                                <li><a href="#">Using Web Push Notifications API</a></li>
+                                <li><a href="#">FAQ's</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="">
+                            <h5>Company</h5>
+                            
+                            <ul class="uk-nav uk-nav-default">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Partners</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- FOOTER-BOTTOM-->
+            <div class="footer-bottom">
+                <div class="uk-container">
+                    <div class="" uk-grid>
+                        <div class="uk-width-1-2@s uk-width-2-5@m">
+                            <ul>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">GDPR</a></li>
+                            </ul>
+                        </div>
+                        <div class="uk-width-1-2@s uk-width-3-5@m">
+                            <p class="uk-margin-remove uk-text-right">&copy; 2016 onwards. All rights reserved. iZooto is brought to you by Datability Solutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END-OF-FOOTER-BOTTOM-->
+        </section>
+        <!-- END-OF-IZOOTO-FOOTER-->
+        
+    </div>
+    <!-- END-OF-FULL-PAGE-WRAPPER-->
+    
+    <!-- -->
+    <a href="#" class="back-top uk-totop uk-icon" uk-totop="" uk-scroll="" uk-tooltip="" aria-expanded="false" style="display: inline;"></a>
+    <!-- -->
+    
+    <!-- JavaScript-->
+    <!--<script src="https://code.jquery.com/jquery-latest.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="assets/javaScript/libraries/scrolloverflow.min.js"></script>
+
+    <script type="text/javascript" src="assets/javaScript/libraries/jquery.fullpage.js"></script>
+    
+    <!-- APP-JS-->
+    <script src="assets/javaScript/app.js"></script>
+    
+</body>
+</html>

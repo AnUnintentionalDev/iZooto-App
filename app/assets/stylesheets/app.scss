@@ -1,0 +1,392 @@
+// 1. Custom variables and variable overwrites.
+$global-link-color: #0065ff;
+$global-color: #64636c;
+$global-font-family: 'Open Sans', sans-serif;
+$lightbox-toolbar-background: rgba(255,255,255,0.6);
+$lightbox-toolbar-color:rgba(0,0,0,0.8);
+
+$global-primary-background: #0065ff;
+$global-secondary-background: #00c132;
+
+@import "uikit/src/scss/mixins-theme.scss";
+
+// 2. Import default variables and available mixins.
+@import "uikit/src/scss/variables-theme.scss";
+// 3. Your custom mixin overwrites.
+@mixin hook-card() { color: #000; }
+
+// 4. Import UIkit.
+@import "uikit/src/scss/uikit-theme.scss";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    color: $global-color;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #0065ff;
+  outline: 1px solid #0065ff;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%; 
+	z-index: 9999;
+	background: url('../images/loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+h1,h2,h3,h4,h5,h6{ font-family: 'Lato', sans-serif; font-weight: 700; line-height: 1.4; color: #000;}
+
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6{ color: #64636c;}
+
+.uk-button{ text-transform: none; font-weight: 600;}
+
+.section{ 
+    height: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+// MEDIA-QUERIES
+
+$screen-medium-max: 700px;
+$screen-small-max: 480px;
+
+@mixin medium{
+    @media (max-width: $screen-medium-max){
+        @content;
+    }
+}
+
+@mixin small{
+  @media (max-width: $screen-small-max){
+      @content;
+  }
+}
+
+#fullpage{
+    /*z-index: +10750;*/
+}
+
+// HEADER-&-NAVIGATION
+
+.uk-offcanvas .uk-nav.uk-nav-default{ margin-top: 1.5em;}
+
+// CUSTOM-THEME
+$whiteHeading : #fff;
+@mixin text-shadow($one, $two, $three){
+  text-shadow: $one $two $three;
+}
+
+// TOP-MAIN-SECTION
+
+.top-main-section{ 
+    background-color: #e6f5fe;
+    font-weight: 600;
+    
+    #header{
+        padding: 15px 0 0;
+        
+        .uk-navbar-container{ 
+            background-color: #e6f5fe;
+            
+            a{ text-transform: none; font-weight: 600;}
+            .menu-link{ height: auto; color: #64636c;}
+        }
+        
+        a.button-in-nav{ color: #fff; margin-right: 1em; height: auto;}
+        
+        .uk-navbar-nav{
+            li{
+                align-self: center;
+                
+                .menu-link:hover, .menu-link:focus, .menu-link.uk-open{
+                    color: #000;
+                    text-decoration: overline;
+                    transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    -moz-transform: scale(1.1);
+                }
+                
+            }
+        }
+        
+        .uk-navbar-nav > li > a, .uk-offcanvas .uk-nav-default .uk-nav-header a{ transition: all ease-in 0.3s; -webkit-transition: all ease-in 0.3s; -moz-transition: all ease-in 0.3s; -ms-transition: all ease-in 0.3s;}
+        
+        .uk-offcanvas-bar{
+            color: inherit;
+        }
+    }
+    
+    .inner-section-padding{ padding: 70px 42px 0 90px;}
+    
+    .get-started-for-free{
+        
+        margin-top: 60px;
+        
+        .text-box{ width: 65%; margin-right: -5px; height: 50px;}
+        .get-started-button{ width: 35%; height: 50px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; background-color: #0053d8;}
+
+    }
+
+    .top-main-section-inner{
+        h1{
+            color: #034c83;
+        }
+    }
+}
+// ENGAGE-RETARGET-RETAIN
+
+.engage-retarget-section{ 
+    padding: 80px 42px 0 75px;
+    
+    h3{
+        color: #737373;
+    }
+    
+}
+.engage-fixed-nav-wrapper{
+    
+    width: 100%;
+    z-index: 980;
+    top: 30px;
+    display: none;
+    position: fixed;
+    
+    .engage-fixed-nav{
+        list-style: none;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;        
+
+        li{
+            margin-right: 1.25em;
+            text-align: center;
+
+            a{
+                text-decoration: none;
+                font-size: 1.75rem;
+                font-weight: 600;
+                color: #000;
+            }
+            :hover{
+                color: #0063ef;
+            }
+        }
+        .active{
+            a{
+                color: #0063ef;
+                border-bottom: 2px solid;
+            }
+        }
+    }
+}
+
+// WHY-IZOOTO
+
+.why-izooto{ 
+    padding: 70px 40px 40px; 
+    background: #f3f9ff;
+    
+    .iZooto-features{
+        max-width: 318px;
+        margin: 0 auto;
+        background-color: #fff;
+        
+        .features-wrapper{
+            position: relative; 
+            z-index: 0; 
+            width: 100%;
+            overflow: hidden;
+            
+            .uk-overlay{ 
+                transform: translateY(100%); 
+                transition: all ease-in 0.3s; 
+                z-index: +1;
+                cursor: pointer;
+                height: 100%;
+                color: #fff;
+                
+                h4, p{
+                  color: #fff;  
+                }
+            }
+            p{
+                padding-bottom: 1em;
+                margin-top: 0em;
+                font-weight: 600;
+            }
+        }
+        
+    }
+    :hover > .features-wrapper > .uk-overlay{
+        transform: translateY(0);
+
+    }
+    
+}
+
+// SET-UP-IN-MINS
+
+.set-up-in-mins{ 
+    padding: 162px 40px 40px;
+    
+    .integrations-list{
+        list-style: none;
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 1.5em auto;
+        
+        li{
+            display: inline-block;
+            padding: 10px 25px;
+            border-right: 1px solid #ddd;
+            
+        }
+        :last-child{
+            border-right: 0;
+        }
+        
+    }
+}
+
+// OUR-CUSTOMERS
+
+.customer-testimonials{
+    background: #f3f9ff;
+    padding: 250px 40px 50px;
+    
+    .uk-slideshow-items{
+        
+        li{
+            text-align: center;
+            background: #f3f9ff;
+            padding: 50px 30px 0;
+        }
+    }
+    p{
+        font-size: 1.25em;
+    }
+}
+
+// iZOOTO-FOOTER
+
+.iZooto-footer{
+    padding: 60px 40px 0;
+    
+    .footer-top-box{
+        border-top: 2px solid #2478e3;
+        max-width: 450px;
+        padding: 10px 27px;
+        
+        a{
+            font-weight: 600;
+        }
+        
+    }
+    
+    .footer-nav{
+        background-color: #fdfdfd;
+        padding: 60px 15px 20px;
+        margin-top: 15px;
+        
+        .social-nav{
+            list-style: none;
+            padding-left: 0;
+            margin-left: 0;
+            
+            li{
+                display: inline-block;
+                
+                a{ 
+                    display: inline-block;
+                    text-align: center;
+                    width: 36px;
+                    height: 36px;
+                    background-color: #84939e;
+                    color: #fff;
+                    border-radius: 50%;
+                    padding: 0.25em;
+                    transition: all ease-in 0.3s;
+                    
+                    i{
+                        vertical-align: middle;
+                    }
+                }
+                :hover{
+                    background-color: #5f6a73;
+                }
+            }
+        }
+        
+        a, span{
+            color: #575e6a;
+            font-size: 0.875rem;
+        }
+        
+    }
+    
+    .footer-bottom{
+        background-color: #004aac;
+        padding: 20px 0;
+        margin: 0 -40px;
+        color: #fff;
+        font-size: 0.875rem;
+        
+        ul{
+            list-style: none;
+            
+            li{
+                display: inline-block;
+                border-right: 1px solid #fff;
+                
+                a{
+                    color: #fff;
+                    height: auto;
+                    padding-right: 5px;
+                }
+            }
+            :last-child{
+                border-right: 0;
+            }
+        }
+    }
+}
+
+.back-top {
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.5em;
+  text-align: center;
+  color: #fff;
+  background: #0462df;
+  display: none;
+  right: 1.5em;
+  bottom: 1.5em;
+  border-radius: 50%;
+  position: fixed;
+  transition: all ease-in 0.3s;
+  -webkit-transition: all ease-in 0.3s;
+
+  svg{ 
+      margin-top: 10px; 
+      vertical-align: middle;
+    }
+    :hover{ background: #023c8a; color: #eee;}
+}
